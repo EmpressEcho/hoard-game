@@ -1,0 +1,11 @@
+.progcontainer {
+    width: 150px;
+    height: 20px;
+    border: 2px solid black;
+}
+
+.progbar {
+    background-color: maroon;
+    width: 0%;
+    height: 100%;
+}
