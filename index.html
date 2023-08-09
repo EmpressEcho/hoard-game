@@ -7,17 +7,32 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Hoard</h1>
-    </header>
-    <section id="sidebar">
-        <div class="sidebar-section" id="img-container"></div>
-        <div class="sidebar-section" id="gold-counter"></div>
-        <div class="sidebar-section" id="store-button"></div>
-    </section>
-    <section id="quests">
-    </section>
-    <footer></footer>
+    <div id="grid">
+        <header class="header">Hoard</header>
+        <aside class="sidebar">test
+            <div class="hoardImage"></div>
+            <section class="goldDisplay">
+                <p id="gold">0</p>
+                <p>Gold</p>
+            </section>
+            <div class="storeButton">Visit the Store</div>
+        </aside>
+        <main class="game">
+            
+            <section class="questsBar">
+                <div class="quest" id="quest1">
+                    <p>Raid a <br>Small Village</p>
+                    <div class="questImage"></div>
+                    <div class="progContainer">
+                        <div class="progBar" id="progBar1"></div>
+                    </div>
+                </div>
+            </section>
+            <section class="minions"></section>
+        </main>
+        <footer class="footer">test</footer>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
