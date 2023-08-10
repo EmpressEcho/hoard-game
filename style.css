@@ -12,7 +12,7 @@ body {
 
 #grid {
     display: grid;
-    grid-template-columns: 300px 1fr;
+    grid-template-columns: 300px 1200px;
     grid-template-areas: 
         "header header"
         "sidebar game"
@@ -88,6 +88,7 @@ body {
 
 .game {
     grid-area: game;
+    position: relative;
 }
 
 .questsBar {
@@ -172,6 +173,39 @@ body {
     border-bottom: 1px solid #f8f0d3;
     grid-area: footer;
     height: 40px;
+}
+
+.store {
+    position: absolute;
+    height: 626px;
+    width: 1199px;
+    background-color: #0d261a;
+    top: 0px;
+}
+
+.userProfileOptions {
+    position: absolute;
+    max-height: 90px;
+    width: 150px;
+    background-color: #0d261a;
+    top: 0px; right: 1px;
+    border-left: 1px solid #f8f0d3;
+    border-bottom: 1px solid #f8f0d3;
+    display: grid;
+}
+
+.userProfileOptions > div {
+    border-top: 1px solid #f8f0d3;
+    padding-left: 5px;
+}
+
+.userProfileOptions > div:hover {
+    background-color: #CDA71E;
+    color: #06130d;
+}
+
+#userLogin {
+    border: none;
 }
 
 .hidden {
