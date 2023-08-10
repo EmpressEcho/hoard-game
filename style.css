@@ -181,6 +181,41 @@ body {
     width: 1199px;
     background-color: #0d261a;
     top: 0px;
+    display: grid;
+    grid-template-columns: 800px 400px;
+}
+
+.storeMinions {
+    border-right: 1px solid #f8f0d3;
+}
+
+.storeMinions p, .storeUpgrades p {
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 10px 0 0 0;
+    height: 30px;
+}
+
+.storeMinionsGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 190px);
+    margin: 10px 0 0 20px;
+}
+
+.storeMinionsItem, .storeUpgradesItem {
+    border: 1px solid #f8f0d3;
+    height: 130px;
+    margin: 5px;
+}
+
+.storeMinionsItem:hover, .storeUpgradesItem:hover {
+    background-color: #CDA71E;
+}
+
+.storeUpgradesGrid {
+    display: grid;
+    grid-template-columns: 190px 190px;
+    margin: 10px 0 0 10px;
 }
 
 .userProfileOptions {
