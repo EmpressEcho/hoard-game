@@ -6,6 +6,8 @@ body {
     box-sizing: border-box;
     font-family: 'Marcellus SC', serif;
     margin: 0;
+    color: #f8f0d3;
+    background-color: #06130d;
 }
 
 #grid {
@@ -17,25 +19,39 @@ body {
         "footer footer";
     max-width: 1500px;
     margin: 0 auto;
-    border-left: 1px solid black;
-    border-right: 1px solid black;
+    border-left: 1px solid #f8f0d3;
+    border-right: 1px solid #f8f0d3;
+    background-color: #0d261a;
 }
 
 .header {
     grid-area: header;
+    height: 51px;
     text-align: center;
     font-size: 2.5rem;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #f8f0d3;
+}
+
+.userProfile {
+    height: 51px;
+    width: 51px;
+    border-left: 1px solid #f8f0d3;
+    float: right;
+}
+
+.userProfile:hover {
+    background-color: #CDA71E;
+    border-right: 1px solid #f8f0d3;
 }
 
 .sidebar {
     grid-area: sidebar;
-    border-right: 1px solid black;
+    border-right: 1px solid #f8f0d3;
 }
 
 .hoardImage {
     height: 400px;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #f8f0d3;
 }
 
 .goldDisplay {
@@ -57,11 +73,13 @@ body {
 .storeButton {
     height: 45px;
     margin: 18px 0;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
+    border-top: 1px solid #06130d;
+    border-bottom: 1px solid #06130d;
     font-size: 1.5rem;
     text-align: center;
     padding: 6px;
+    background-color: #CDA71E;
+    color: #06130d;
 }
 
 .storeButton:hover {
@@ -74,19 +92,28 @@ body {
 
 .questsBar {
     height: 160px;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #f8f0d3;
     display: grid;
     grid-template-columns: repeat(10, 120px);
 }
 
 .quest {
-    border-right: 1px solid black;
+    border-right: 1px solid #f8f0d3;
     height: 100%;
     width: 120px;
 }
 
 .quest:hover {
-    background-color: lightgray;
+    background-color: #CDA71E;
+    color: #06130d;
+}
+
+.quest:hover > * {
+    border-color: #06130d;
+}
+
+.quest:hover .progBar {
+    background-color: #0d261a;
 }
 
 .quest p {
@@ -97,20 +124,20 @@ body {
 .questImage {
     height: 80px;
     width: 80px;
-    border: 1px solid black;
+    border: 1px solid #f8f0d3;
     margin: 5px 0 0 20px;
 }
 
 .progContainer {
     width: 100px;
     height: 20px;
-    border: 1px solid black;
+    border: 1px solid #f8f0d3;
     margin-left: 10px;
     margin-top: 10px;
 }
 
 .progBar {
-    background-color: #800000;
+    background-color: #CDA71E;
     width: 0%;
     height: 100%;
 }
@@ -124,7 +151,7 @@ body {
 .minion {
     height: 100%;
     width: 240px;
-    border-right: 1px solid black;
+    border-right: 1px solid #f8f0d3;
     padding: 5px;
 }
 
@@ -136,13 +163,13 @@ body {
 .progContainerM {
     height: 20px;
     width: 220px;
-    border: 1px solid black;
+    border: 1px solid #f8f0d3;
     margin-left: 4px;
 }
 
 .footer {
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
+    border-top: 1px solid #f8f0d3;
+    border-bottom: 1px solid #f8f0d3;
     grid-area: footer;
     height: 40px;
 }
