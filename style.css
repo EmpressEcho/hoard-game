@@ -15,6 +15,10 @@ body {
         "header header"
         "sidebar game"
         "footer footer";
+    max-width: 1500px;
+    margin: 0 auto;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
 }
 
 .header {
@@ -112,11 +116,37 @@ body {
 }
 
 .minions {
-    height: 446px;
+    height: 466px;
+    display: grid;
+    grid-template-columns: repeat(5, 240px);
+}
+
+.minion {
+    height: 100%;
+    width: 240px;
+    border-right: 1px solid black;
+    padding: 5px;
+}
+
+.minion p {
+    margin: 0;
+    text-align: center;
+}
+
+.progContainerM {
+    height: 20px;
+    width: 220px;
+    border: 1px solid black;
+    margin-left: 4px;
 }
 
 .footer {
-    border: 1px solid black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
     grid-area: footer;
     height: 40px;
+}
+
+.hidden {
+    display: none;
 }
