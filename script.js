@@ -24,6 +24,46 @@ const progBarQ8 = document.getElementById("progBar8")
 const progBarQ9 = document.getElementById("progBar9")
 const progBarQ10 = document.getElementById("progBar10")
 
+// --- Quest Unlock Levels ---
+const questUnlockArray = [
+    {
+        questElement: quest2,
+        unlockThreshold: 10
+    },
+    {
+        questElement: quest3,
+        unlockThreshold: 20
+    },
+    {
+        questElement: quest4,
+        unlockThreshold: 30
+    },
+    {
+        questElement: quest5,
+        unlockThreshold: 40
+    },
+    {
+        questElement: quest6,
+        unlockThreshold: 50
+    },
+    {
+        questElement: quest7,
+        unlockThreshold: 60
+    },
+    {
+        questElement: quest8,
+        unlockThreshold: 70
+    },
+    {
+        questElement: quest9,
+        unlockThreshold: 80
+    },
+    {
+        questElement: quest10,
+        unlockThreshold: 90
+    },
+]
+
 // --- Minion Elements ---
 const minionKobolds = document.getElementById("minionKobolds")
 const minionBandits = document.getElementById("minionBandits")
@@ -67,15 +107,17 @@ function updateGold (earnedGold) {
 }
 
 function updateQuests () {
-    let gold = Number(goldTracker.textContent)
-    if (gold >= 10) (quest2.classList.remove("hidden"))
+    let gold = Number(goldTracker.textContent);
+    for(let i = 0; i <= questUnlockArray.length; i++) {
+        if (gold >= questUnlockArray[i].unlockThreshold && questUnlockArray[i].questElement.classList.contains("hidden")) (questUnlockArray[i].questElement.classList.remove("hidden"))
+    }
 }
 
 function toggleHidden (element) {
     element.classList.toggle("hidden")
 }
 
-magicButton.addEventListener("click", function() {
+quest1.addEventListener("click", function() {
     progBar1.animate([
         {
             width: "0%"
@@ -84,7 +126,7 @@ magicButton.addEventListener("click", function() {
             width: "100%"
         }
     ], 1000);
-    setTimeout(() => updateGold(1), 1000);
+    setTimeout(() => updateGold(10), 1000);
 })
 
 storeButton.addEventListener("click", function() {
