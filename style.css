@@ -104,6 +104,10 @@ body {
     width: 120px;
 }
 
+#quest10 {
+    border-right: none;
+}
+
 .quest:hover {
     background-color: #CDA71E;
     color: #06130d;

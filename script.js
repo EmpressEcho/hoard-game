@@ -19,7 +19,7 @@ function updateGold (earnedGold) {
 
 function updateQuests () {
     let gold = Number(goldTracker.textContent)
-    if (gold >= 10) (quest2.classList.toggle("hidden"))
+    if (gold >= 10) (quest2.classList.remove("hidden"))
 }
 
 function toggleHidden (element) {
