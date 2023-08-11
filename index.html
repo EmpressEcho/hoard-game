@@ -7,10 +7,212 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="progcontainer">
-        <div class="progbar"></div>
+    <div id="grid">
+        <header class="header">Hoard
+            <div class="userProfile"></div>
+        </header>
+        <aside class="sidebar">
+            <div class="hoardImage"></div>
+            <section class="goldDisplay">
+                <p id="gold">0</p>
+                <p>Gold</p>
+            </section>
+            <div class="storeButton">Visit the Store</div>
+        </aside>
+        <main class="game">
+            <section class="questsBar">
+                <div class="quest" id="quest1">
+                    <p>Loot Old<br>Ruins</p>
+                    <div class="questImage"></div>
+                    <div class="progContainer">
+                        <div class="progBar" id="progBar1"></div>
+                    </div>
+                </div>
+
+                <div class="quest hidden" id="quest2">
+                    <p>Steal from<br>Farmers</p>
+                    <div class="questImage"></div>
+                    <div class="progContainer">
+                        <div class="progBar" id="progBar2"></div>
+                    </div>
+                </div>
+
+                <div class="quest hidden" id="quest3">
+                    <p>Raid a<br>Goblin Camp</p>
+                    <div class="questImage"></div>
+                    <div class="progContainer">
+                        <div class="progBar" id="progBar3"></div>
+                    </div>
+                </div>
+
+                <div class="quest hidden" id="quest4">
+                    <p>Hunt a Gnoll<br>Warband</p>
+                    <div class="questImage"></div>
+                    <div class="progContainer">
+                        <div class="progBar" id="progBar4"></div>
+                    </div>
+                </div>
+
+                <div class="quest hidden" id="quest5">
+                    <p>Attack a<br>Wizard's Tower</p>
+                    <div class="questImage"></div>
+                    <div class="progContainer">
+                        <div class="progBar" id="progBar5"></div>
+                    </div>
+                </div>
+
+                <div class="quest hidden" id="quest6">
+                    <p>Terrorize a<br>Local Town</p>
+                    <div class="questImage"></div>
+                    <div class="progContainer">
+                        <div class="progBar" id="progBar6"></div>
+                    </div>
+                </div>
+
+                <div class="quest hidden" id="quest7">
+                    <p>Steal a<br>Church's Relics</p>
+                    <div class="questImage"></div>
+                    <div class="progContainer">
+                        <div class="progBar" id="progBar7"></div>
+                    </div>
+                </div>
+
+                <div class="quest hidden" id="quest8">
+                    <p>Raid a<br>War Caravan</p>
+                    <div class="questImage"></div>
+                    <div class="progContainer">
+                        <div class="progBar" id="progBar8"></div>
+                    </div>
+                </div>
+
+                <div class="quest hidden" id="quest9">
+                    <p>Attack the<br>Capital</p>
+                    <div class="questImage"></div>
+                    <div class="progContainer">
+                        <div class="progBar" id="progBar9"></div>
+                    </div>
+                </div>
+
+                <div class="quest hidden" id="quest10">
+                    <p>Demand a<br>Tribute</p>
+                    <div class="questImage"></div>
+                    <div class="progContainer">
+                        <div class="progBar" id="progBar10"></div>
+                    </div>
+                </div>
+            </section>
+            <section class="minions">
+                <div class="minion hidden" id="minionKobolds">
+                    <p>Kobolds</p>
+                    <div class="progContainerM">
+                        <div class="progBar" id="progBarM1"></div>
+                    </div>
+                </div>
+                <div class="minion hidden" id="minionBandits">
+                    <p>Bandits</p>
+                    <div class="progContainerM">
+                        <div class="progBar" id="progBarM2"></div>
+                    </div>
+                </div>
+                <div class="minion hidden" id="minionCultists">
+                    <p>Cultists</p>
+                    <div class="progContainerM">
+                        <div class="progBar" id="progBarM3"></div>
+                    </div>
+                </div>
+                <div class="minion hidden" id="minionDragonborn">
+                    <p>Dragonborn</p>
+                    <div class="progContainerM">
+                        <div class="progBar" id="progBarM4"></div>
+                    </div>
+                </div>
+                <div class="minion hidden" id="minionElementals">
+                    <p>Elementals</p>
+                    <div class="progContainerM">
+                        <div class="progBar" id="progBarM5"></div>
+                    </div>
+                </div>
+            </section>
+
+            
+            <div class="store hidden">
+                <section class="storeMinions">
+                    <p class="storeGridHeader">Minions</p>
+                    <div class="storeMinionsGrid">
+                        <div class="storeMinionsItem">
+                            <div>
+                                <p class="storeMinionsHeader">Kobold</p>
+                                <div class="storeMinionsImage"></div>
+                            </div>
+                            <p class="storeMinionsBio">A dragon's first minion, Kobolds are weak, plentiful, and <i>very</i> expendable.</p>
+                        </div>
+                        <div class="storeMinionsItem">
+                            <div>
+                                <p class="storeMinionsHeader">Bandit</p>
+                                <div class="storeMinionsImage"></div>
+                            </div>
+                            <p class="storeMinionsBio">Good for extorting local traders and villages, but loyal only to themselves and their wallets.</p>
+                        </div>
+                        <div class="storeMinionsItem">
+                            <div>
+                                <p class="storeMinionsHeader">Cultist</p>
+                                <div class="storeMinionsImage"></div>
+                            </div>
+                            <p class="storeMinionsBio">A wizard of some power, who just so happens to worship you as a god. Lucky you!</p>
+                        </div>
+                        <div class="storeMinionsItem">
+                            <div>
+                                <p class="storeMinionsHeader">Dragonborn</p>
+                                <div class="storeMinionsImage"></div>
+                            </div>
+                            <p class="storeMinionsBio">A fully trained soldier and paladin, bound to your cause by an oath and ready to fight for you.</p>
+                        </div>
+                        <div class="storeMinionsItem">
+                            <div>
+                                <p class="storeMinionsHeader">Elemental</p>
+                                <div class="storeMinionsImage"></div>
+                            </div>
+                            <p class="storeMinionsBio">A powerful embodiment of your elemental breath, ready to bring your wrath to your enemies.</p>
+                        </div>
+                        <div class="storeMinionsItem hidden"></div>
+                        <div class="storeMinionsItem hidden"></div>
+                        <div class="storeMinionsItem hidden"></div>
+                        <div class="storeMinionsItem hidden"></div>
+                        <div class="storeMinionsItem hidden"></div>
+                        <div class="storeMinionsItem hidden"></div>
+                        <div class="storeMinionsItem hidden"></div>
+                        <div class="storeMinionsItem hidden"></div>
+                        <div class="storeMinionsItem hidden"></div>
+                        <div class="storeMinionsItem hidden"></div>
+                        <div class="storeMinionsItem hidden"></div>
+                    </div>
+                </section>
+                <section class="storeUpgrades">
+                    <p class="storeGridHeader">Upgrades</p>
+                    <div class="storeUpgradesGrid">
+                        <div class="storeUpgradesItem hidden"></div>
+                        <div class="storeUpgradesItem hidden"></div>
+                        <div class="storeUpgradesItem hidden"></div>
+                        <div class="storeUpgradesItem hidden"></div>
+                        <div class="storeUpgradesItem hidden"></div>
+                        <div class="storeUpgradesItem hidden"></div>
+                        <div class="storeUpgradesItem hidden"></div>
+                        <div class="storeUpgradesItem hidden"></div>
+                    </div>
+                </section>
+            </div>
+            <div class="userProfileOptions hidden">
+                <div id="userLogin" >Log in</div>
+                <div id="userPrefs" class="hidden">Preferences</div>
+                <div id="userAchievements" class="hidden">Achievements</div>
+                <div id="userLogout" class="hidden">Log out</div>
+            </div>
+        </main>
+        <footer class="footer"></footer>
     </div>
-    <div class="magic">shazam!</div>
+
+
+
     <script src="script.js"></script>
 </body>
 </html>
