@@ -4,6 +4,12 @@ const goldTracker = document.getElementById("gold")
 
 const quest2 = document.getElementById("quest2")
 
+const storeButton = document.querySelector(".storeButton")
+const store = document.querySelector(".store")
+
+const userProfileButton = document.querySelector(".userProfile")
+const userProfileOptions = document.querySelector(".userProfileOptions")
+
 function updateGold (earnedGold) {
     let gold = Number(goldTracker.textContent)
     gold += earnedGold
@@ -16,6 +22,10 @@ function updateQuests () {
     if (gold >= 10) (quest2.classList.toggle("hidden"))
 }
 
+function toggleHidden (element) {
+    element.classList.toggle("hidden")
+}
+
 magicButton.addEventListener("click", function() {
     progBar1.animate([
         {
@@ -24,6 +34,15 @@ magicButton.addEventListener("click", function() {
         {
             width: "100%"
         }
-    ], 2000);
-    setTimeout(() => updateGold(1), 2000);
+    ], 1000);
+    setTimeout(() => updateGold(1), 1000);
+})
+
+storeButton.addEventListener("click", function() {
+    toggleHidden(store)
+    storeButton.textContent === "Visit the Store" ? storeButton.textContent = "Close the Store" : storeButton.textContent = "Visit the Store";
+})
+
+userProfileButton.addEventListener("click", function() {
+    toggleHidden(userProfileOptions)
 })
