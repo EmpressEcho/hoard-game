@@ -1,28 +1,28 @@
-const goldTracker = document.getElementById("gold")
+const goldTracker = document.getElementById("gold");
 
 // --- Quest Elements ---
-const quest1 = document.getElementById("quest1")
-const quest2 = document.getElementById("quest2")
-const quest3 = document.getElementById("quest3")
-const quest4 = document.getElementById("quest4")
-const quest5 = document.getElementById("quest5")
-const quest6 = document.getElementById("quest6")
-const quest7 = document.getElementById("quest7")
-const quest8 = document.getElementById("quest8")
-const quest9 = document.getElementById("quest9")
-const quest10 = document.getElementById("quest10")
+const quest1 = document.getElementById("quest1");
+const quest2 = document.getElementById("quest2");
+const quest3 = document.getElementById("quest3");
+const quest4 = document.getElementById("quest4");
+const quest5 = document.getElementById("quest5");
+const quest6 = document.getElementById("quest6");
+const quest7 = document.getElementById("quest7");
+const quest8 = document.getElementById("quest8");
+const quest9 = document.getElementById("quest9");
+const quest10 = document.getElementById("quest10");
 
 // --- Quest Progress Bars ---
-const progBarQ1 = document.getElementById("progBar1")
-const progBarQ2 = document.getElementById("progBar2")
-const progBarQ3 = document.getElementById("progBar3")
-const progBarQ4 = document.getElementById("progBar4")
-const progBarQ5 = document.getElementById("progBar5")
-const progBarQ6 = document.getElementById("progBar6")
-const progBarQ7 = document.getElementById("progBar7")
-const progBarQ8 = document.getElementById("progBar8")
-const progBarQ9 = document.getElementById("progBar9")
-const progBarQ10 = document.getElementById("progBar10")
+const progBarQ1 = document.getElementById("progBar1");
+const progBarQ2 = document.getElementById("progBar2");
+const progBarQ3 = document.getElementById("progBar3");
+const progBarQ4 = document.getElementById("progBar4");
+const progBarQ5 = document.getElementById("progBar5");
+const progBarQ6 = document.getElementById("progBar6");
+const progBarQ7 = document.getElementById("progBar7");
+const progBarQ8 = document.getElementById("progBar8");
+const progBarQ9 = document.getElementById("progBar9");
+const progBarQ10 = document.getElementById("progBar10");
 
 // --- Quest Unlock Levels ---
 const questUnlockArray = [
@@ -62,60 +62,126 @@ const questUnlockArray = [
         questElement: quest10,
         unlockThreshold: 90
     },
-]
+];
 
 // --- Minion Elements ---
-const minionKobolds = document.getElementById("minionKobolds")
-const minionBandits = document.getElementById("minionBandits")
-const minionCultists = document.getElementById("minionCultists")
-const minionDragonborn = document.getElementById("minionDragonborn")
-const minionElementals = document.getElementById("minionElementals")
+const minionKobolds = document.getElementById("minionKobolds");
+const minionBandits = document.getElementById("minionBandits");
+const minionCultists = document.getElementById("minionCultists");
+const minionDragonborn = document.getElementById("minionDragonborn");
+const minionElementals = document.getElementById("minionElementals");
 
 // --- Minion Progress Bars ---
-const progBarKobolds = document.getElementById("progBarM1")
-const progBarBandits = document.getElementById("progBarM2")
-const progBarCultists = document.getElementById("progBarM3")
-const progBarDragonborn = document.getElementById("progBarM4")
-const progBarElementals = document.getElementById("progBarM5")
+const progBarKobolds = document.getElementById("progBarM1");
+const progBarBandits = document.getElementById("progBarM2");
+const progBarCultists = document.getElementById("progBarM3");
+const progBarDragonborn = document.getElementById("progBarM4");
+const progBarElementals = document.getElementById("progBarM5");
 
 // --- Store Elements ---
-const storeButton = document.querySelector(".storeButton")
-const store = document.querySelector(".store")
+const storeButton = document.querySelector(".storeButton");
+const store = document.querySelector(".store");
 
 // --- Store Minions ---
-const storeKobolds = document.getElementById("storeKobolds")
-const storeBandits = document.getElementById("storeBandits")
-const storeCultists = document.getElementById("storeCultists")
-const storeDragonborn = document.getElementById("storeDragonborn")
-const storeElementals = document.getElementById("storeElementals")
+const storeKobolds = document.getElementById("storeKobolds");
+const storeBandits = document.getElementById("storeBandits");
+const storeCultists = document.getElementById("storeCultists");
+const storeDragonborn = document.getElementById("storeDragonborn");
+const storeElementals = document.getElementById("storeElementals");
+
+// --- Minion Variables ---
+let kobolds = {
+    number: 0,
+    delay: 2000,
+    value: 3,
+    cost: 10,
+    progBar: progBarKobolds
+};
+let bandits = {
+    number: 0,
+    delay: 2000,
+    value: 3,
+    cost: 10,
+    progBar: progBarBandits
+};
+let cultists = {
+    number: 0,
+    delay: 2000,
+    value: 3,
+    cost: 10,
+    progBar: progBarCultists
+};
+let dragonborn = {
+    number: 0,
+    delay: 2000,
+    value: 3,
+    cost: 10,
+    progBar: progBarDragonborn
+};
+let elementals = {
+    number: 0,
+    delay: 2000,
+    value: 3,
+    cost: 10,
+    progBar: progBarElementals
+};
+
+// --- Minion Intervals ---
+let koboldInterval = null;
+let banditInterval = null;
+let cultistInterval = null;
+let dragonbornInterval = null;
+let elementalInterval = null;
 
 // --- User Profile Elements ---
-const userProfileButton = document.querySelector(".userProfile")
-const userProfileOptions = document.querySelector(".userProfileOptions")
-const userLogin = document.getElementById("userLogin")
-const userPrefs = document.getElementById("userPrefs")
-const userAchievements = document.getElementById("userAchievements")
-const userLogout = document.getElementById("userLogout")
+const userProfileButton = document.querySelector(".userProfile");
+const userProfileOptions = document.querySelector(".userProfileOptions");
+const userLogin = document.getElementById("userLogin");
+const userPrefs = document.getElementById("userPrefs");
+const userAchievements = document.getElementById("userAchievements");
+const userLogout = document.getElementById("userLogout");
 
 // --------------
 
 function updateGold (earnedGold) {
-    let gold = Number(goldTracker.textContent)
-    gold += earnedGold
-    goldTracker.textContent = gold
-    updateQuests()
-}
+    let gold = Number(goldTracker.textContent);
+    gold += earnedGold;
+    goldTracker.textContent = gold;
+    if (earnedGold > 0) (updateQuests());
+};
 
 function updateQuests () {
     let gold = Number(goldTracker.textContent);
     for(let i = 0; i <= questUnlockArray.length; i++) {
-        if (gold >= questUnlockArray[i].unlockThreshold && questUnlockArray[i].questElement.classList.contains("hidden")) (questUnlockArray[i].questElement.classList.remove("hidden"))
+        if (gold >= questUnlockArray[i].unlockThreshold && questUnlockArray[i].questElement.classList.contains("hidden")) (questUnlockArray[i].questElement.classList.remove("hidden"));
     }
+};
+
+function updateMinionInterval (minionInterval, minion) {
+    if (minionInterval !== null) (clearInterval(minionInterval));
+    minionInterval = setInterval(runMinion, minion.delay, minion);
+}
+
+function updateMinionElement (minionElement) {
+    if (minionElement.classList.contains("hidden")) (minionElement.classList.remove("hidden"));
+
+}
+
+function runMinion(minion) {
+    minion.progBar.animate([
+        {
+            width: "0%"
+        },
+        {
+            width: "100%"
+        }
+    ], minion.delay);
+    setTimeout(() => updateGold(minion.number * minion.value), minion.delay);
 }
 
 function toggleHidden (element) {
-    element.classList.toggle("hidden")
-}
+    element.classList.toggle("hidden");
+};
 
 quest1.addEventListener("click", function() {
     progBar1.animate([
@@ -130,28 +196,19 @@ quest1.addEventListener("click", function() {
 })
 
 storeButton.addEventListener("click", function() {
-    toggleHidden(store)
+    toggleHidden(store);
     storeButton.textContent === "Visit the Store" ? storeButton.textContent = "Close the Store" : storeButton.textContent = "Visit the Store";
 })
 
-userProfileButton.addEventListener("click", function() {
-    toggleHidden(userProfileOptions)
+storeKobolds.addEventListener("click", function() {
+    if (Number(goldTracker.textContent) >= kobolds.cost) {
+        updateGold(0-kobolds.cost);
+        kobolds.number++
+        updateMinionElement(minionKobolds);
+        updateMinionInterval(koboldInterval, kobolds);
+    }
 })
 
-let kobolds = 1;
-
-function runKobolds(kobolds) {
-    progBarKobolds.animate([
-        {
-            width: "0%"
-        },
-        {
-            width: "100%"
-        }
-    ], 2000);
-    setTimeout(() => updateGold(kobolds * 5), 2000)
-}
-
-let koboldInterval = setInterval(runKobolds, 2000, kobolds)
-
-setTimeout(() => {kobolds = 15; clearInterval(koboldInterval); koboldInterval = setInterval(runKobolds, 2000, kobolds)}, 14000)
+userProfileButton.addEventListener("click", function() {
+    toggleHidden(userProfileOptions);
+})
