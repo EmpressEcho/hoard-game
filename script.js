@@ -137,3 +137,21 @@ storeButton.addEventListener("click", function() {
 userProfileButton.addEventListener("click", function() {
     toggleHidden(userProfileOptions)
 })
+
+let kobolds = 1;
+
+function runKobolds(kobolds) {
+    progBarKobolds.animate([
+        {
+            width: "0%"
+        },
+        {
+            width: "100%"
+        }
+    ], 2000);
+    setTimeout(() => updateGold(kobolds * 5), 2000)
+}
+
+let koboldInterval = setInterval(runKobolds, 2000, kobolds)
+
+setTimeout(() => {kobolds = 15; clearInterval(koboldInterval); koboldInterval = setInterval(runKobolds, 2000, kobolds)}, 14000)
