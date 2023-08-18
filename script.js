@@ -34,56 +34,56 @@ const quest1 = {
 const quest2 = {
     element: quest2Element,
     progBar: progBarQ2,
-    reward: 1,
-    delay: 1000
+    reward: 10,
+    delay: 2000
 };
 const quest3 = {
     element: quest3Element,
     progBar: progBarQ3,
-    reward: 1,
-    delay: 1000
+    reward: 40,
+    delay: 4000
 };
 const quest4 = {
     element: quest4Element,
     progBar: progBarQ4,
-    reward: 1,
-    delay: 1000
+    reward: 150,
+    delay: 10000
 };
 const quest5 = {
     element: quest5Element,
     progBar: progBarQ5,
-    reward: 1,
-    delay: 1000
+    reward: 300,
+    delay: 15000
 };
 const quest6 = {
     element: quest6Element,
     progBar: progBarQ6,
-    reward: 1,
-    delay: 1000
+    reward: 625,
+    delay: 25000
 };
 const quest7 = {
     element: quest7Element,
     progBar: progBarQ7,
-    reward: 1,
-    delay: 1000
+    reward: 1200,
+    delay: 40000
 };
 const quest8 = {
     element: quest8Element,
     progBar: progBarQ8,
-    reward: 1,
-    delay: 1000
+    reward: 2500,
+    delay: 70000
 };
 const quest9 = {
     element: quest9Element,
     progBar: progBarQ9,
-    reward: 1,
-    delay: 1000
+    reward: 4000,
+    delay: 100000
 };
 const quest10 = {
     element: quest10Element,
     progBar: progBarQ10,
-    reward: 1,
-    delay: 1000
+    reward: 10000,
+    delay: 200000
 };
 const questArray = [quest1, quest2, quest3, quest4, quest5, quest6, quest7, quest8, quest9, quest10];
 
@@ -207,13 +207,13 @@ let bandits = {
     storeBio: storeBanditBio,
     element: minionBandits,
     interval: banditInterval,
-    unlockDescription: "The first kobold has arrived, offering to help build your hoard in exchange for a little gold!"
+    unlockDescription: "The first bandit has arrived, with plans to extort the local towns if you pay them!"
 };
 let cultists = {
     name: "Cultist",
     number: 0,
     delay: 2000,
-    value: 3,
+    value: 6,
     cost: 30,
     progBar: progBarCultists,
     storeElement: storeCultists,
@@ -222,13 +222,13 @@ let cultists = {
     storeBio: storeCultistBio,
     element: minionCultists,
     interval: cultistInterval,
-    unlockDescription: "The first kobold has arrived, offering to help build your hoard in exchange for a little gold!"
+    unlockDescription: "The first cultist has sworn their oath to you, pledging to do your bidding and grow your hoard!"
 };
 let dragonborn = {
     name: "Dragonborn",
     number: 0,
     delay: 2000,
-    value: 3,
+    value: 9,
     cost: 40,
     progBar: progBarDragonborn,
     storeElement: storeDragonborn,
@@ -237,13 +237,13 @@ let dragonborn = {
     storeBio: storeDbornBio,
     element: minionDragonborn,
     interval: dragonbornInterval,
-    unlockDescription: "The first kobold has arrived, offering to help build your hoard in exchange for a little gold!"
+    unlockDescription: "The first dragonborn has found their way to you, swearing to fight for you if you'll have them!"
 };
 let elementals = {
     name: "Elemental",
     number: 0,
     delay: 2000,
-    value: 3,
+    value: 12,
     cost: 50,
     progBar: progBarElementals,
     storeElement: storeElementals,
@@ -252,7 +252,7 @@ let elementals = {
     storeBio: storeElementalBio,
     element: minionElementals,
     interval: elementalInterval,
-    unlockDescription: "The first kobold has arrived, offering to help build your hoard in exchange for a little gold!"
+    unlockDescription: "The power to create elementals has unlocked itself within you!"
 };
 let minionArray = [kobolds, bandits, cultists, dragonborn, elementals];
 
@@ -315,6 +315,7 @@ function updateMinionsInStore (gold) {
 }
 
 function runMinion(minion) {
+    let goldValue = minion.number * minion.value
     minion.progBar.animate([
         {
             width: "0%"
@@ -323,7 +324,7 @@ function runMinion(minion) {
             width: "100%"
         }
     ], minion.delay);
-    setTimeout(() => updateGold(minion.number * minion.value), minion.delay);
+    setTimeout(() => updateGold(goldValue), minion.delay);
 }
 
 function toggleHidden (element) {
