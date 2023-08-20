@@ -54,7 +54,7 @@ body {
 .hoardImage {
     height: 400px;
     border-bottom: 1px solid #f8f0d3;
-    background-image: url(images/hoard-icon-placeholder.png);
+    background-image: url(images/drawing.svg);
     background-size: cover;
 }
 
