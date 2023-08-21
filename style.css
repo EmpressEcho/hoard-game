@@ -137,6 +137,46 @@ body {
     margin: 5px 0 0 20px;
 }
 
+#ruinsImage {
+    background-image: url(images/ruins.svg);
+}
+
+#farmImage {
+    background-image: url(images/farm.svg);
+}
+
+#campImage {
+    background-image: url(images/camp.svg);
+}
+
+#warbandImage {
+    background-image: url(images/warband.svg);
+}
+
+#towerImage {
+    background-image: url(images/tower.svg);
+}
+
+#townImage {
+    background-image: url(images/town.svg);
+}
+
+#churchImage {
+    background-image: url(images/church.svg);
+}
+
+#caravanImage {
+    background-image: url(images/caravan.svg);
+}
+
+#capitalImage {
+    background-image: url(images/capital.svg);
+}
+
+#crownImage {
+    background-image: url(images/crown.svg);
+}
+
 .progContainer {
     width: 100px;
     height: 20px;
