@@ -22,6 +22,8 @@ body {
     border-left: 1px solid #f8f0d3;
     border-right: 1px solid #f8f0d3;
     background-color: #0d261a;
+    background-image: url(images/scales.png);
+    background-size: 5%;
 }
 
 .header {
@@ -52,6 +54,8 @@ body {
 .hoardImage {
     height: 400px;
     border-bottom: 1px solid #f8f0d3;
+    background-image: url(images/drawing.svg);
+    background-size: cover;
 }
 
 .goldDisplay {
@@ -131,6 +135,46 @@ body {
     width: 80px;
     border: 1px solid #f8f0d3;
     margin: 5px 0 0 20px;
+}
+
+#ruinsImage {
+    background-image: url(images/ruins.svg);
+}
+
+#farmImage {
+    background-image: url(images/farm.svg);
+}
+
+#campImage {
+    background-image: url(images/camp.svg);
+}
+
+#warbandImage {
+    background-image: url(images/warband.svg);
+}
+
+#towerImage {
+    background-image: url(images/tower.svg);
+}
+
+#townImage {
+    background-image: url(images/town.svg);
+}
+
+#churchImage {
+    background-image: url(images/church.svg);
+}
+
+#caravanImage {
+    background-image: url(images/caravan.svg);
+}
+
+#capitalImage {
+    background-image: url(images/capital.svg);
+}
+
+#crownImage {
+    background-image: url(images/crown.svg);
 }
 
 .progContainer {
@@ -218,6 +262,11 @@ body {
 
 .storeMinionsItem:hover, .storeUpgradesItem:hover {
     background-color: #CDA71E;
+    color: #06130d;
+}
+
+.storeMinionsItem:hover .price {
+    color: #06130d;
 }
 
 .storeMinionsItem > div {
@@ -226,10 +275,33 @@ body {
 }
 
 .storeMinionsHeader {
-    margin: 15px 0 0 5px;
+    margin: 5px 0 0 5px;
     width: 50%;
     float: left;
     font-size: 1.25rem;
+}
+
+.storeMinionsHeader p {
+    margin: 0
+}
+
+.price {
+    color: #CDA71E;
+    font-size: 1rem;
+}
+
+.locked .price {
+    color: gray;
+}
+
+.locked:hover {
+    opacity: 0.5;
+    background-color: lightgray;
+    color: gray;
+}
+
+.locked:hover .price {
+    color: gray;
 }
 
 .storeMinionsImage {
@@ -276,6 +348,50 @@ body {
     border: none;
 }
 
+.alert {
+    position: absolute;
+    background-color: #06130d;
+    border: 1px solid #f8f0d3;
+    width: 800px;
+    height: 250px;
+    top: 50px;
+    left: 200px;
+}
+
+.alertTitle {
+    text-align: center;
+    font-size: 2rem;
+    margin: 15px 0 0 0;
+}
+
+.alertBody {
+    text-align: center;
+    padding: 0 15px;
+}
+
+.alertClose {
+    position: absolute;
+    left: 350px; bottom: 15px;
+    padding: 2px;
+    width: 100px;
+    height: 25px;
+    background-color: #0d261a;
+    border: 1px solid #f8f0d3;
+    text-align: center;
+}
+
+.alertClose:hover {
+    background-color: #CDA71E;
+    color: #06130d;
+    border: #0d261a;
+}
+
 .hidden {
     display: none;
+}
+
+.locked {
+    opacity: 0.5;
+    background-color: lightgray;
+    color: gray;
 }
