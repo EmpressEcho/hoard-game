@@ -1,0 +1,140 @@
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+:root {
+    --bg-green: #06130d;
+    --fg-green: #0d261a;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: 'Marcellus SC', serif;
+    margin: 0;
+    color: #f8f0d3;
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: 1500px;
+    grid-template-areas: 
+        "header"
+        "main"
+        "footer";
+    max-width: 1500px;
+    margin: 0 auto;
+    border-left: 1px solid #f8f0d3;
+    border-right: 1px solid #f8f0d3;
+    background-image: url(/static/images/scales.png);
+    background-size: 5%;
+}
+
+.header {
+    grid-area: header;
+    height: 51px;
+    text-align: center;
+    font-size: 2.5rem;
+    border-bottom: 1px solid #f8f0d3;
+}
+
+.footer {
+    border-top: 1px solid #f8f0d3;
+    border-bottom: 1px solid #f8f0d3;
+    grid-area: footer;
+    height: 40px;
+    text-align: center;
+    padding: 9px 0;
+}
+
+main {
+    grid-area: main;
+    position: relative;
+}
+
+.userProfile {
+    height: 51px;
+    width: 51px;
+    float: right;
+    margin-right: 1px;
+}
+
+.userProfilePicture {
+    border: 1px solid #f8f0d3;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.userProfileOptions {
+    position: absolute;
+    max-height: 90px;
+    width: 150px;
+    top: 0px; right: 1px;
+    border-left: 1px solid #f8f0d3;
+    border-bottom: 1px solid #f8f0d3;
+    display: grid;
+}
+
+.userProfileOptions > a {
+    border-top: 1px solid #f8f0d3;
+    padding-left: 5px;
+    text-decoration: none;
+    color: #f8f0d3;
+}
+
+.userProfileOptions > p {
+    margin: 0;
+    text-align: center;
+}
+
+.userProfileOptions > a:hover {
+    background-color: #CDA71E;
+    color: #06130d;
+}
+
+.alert {
+    position: absolute;
+    border: 1px solid #f8f0d3;
+    width: 800px;
+    height: 250px;
+    top: 50px;
+    left: 400px;
+}
+
+.alertTitle {
+    text-align: center;
+    font-size: 2rem;
+    margin: 15px 0 0 0;
+}
+
+.alertBody {
+    text-align: center;
+    padding: 0 15px;
+}
+
+.alertClose {
+    position: absolute;
+    left: 350px; bottom: 15px;
+    padding: 2px;
+    width: 100px;
+    height: 25px;
+    border: 1px solid #f8f0d3;
+    text-align: center;
+}
+
+.alertClose:hover {
+    background-color: #CDA71E;
+    color: #06130d;
+    border: #0d261a;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.locked {
+    opacity: 0.5;
+    background-color: lightgray;
+    color: gray;
+}

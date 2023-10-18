@@ -1,0 +1,83 @@
+main {
+    position: relative;
+    grid-area: main;
+    height: 626px;
+}
+
+.backButton {
+    position: absolute;
+    display: block;
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    padding-top: 10px;
+    margin: 25px;
+    background-color: #CDA71E;
+    border: 1px solid #06130d;
+    color: #06130d;
+    text-decoration: none;
+}
+
+.backButton:hover {
+    background-color: lightgray;
+}
+
+.flashMessageBox {
+    position: absolute;
+    left: 450px; top: 30px;
+    width: 600px;
+    text-align: center;
+    color: red;
+}
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 100px auto 0;
+}
+
+.loginForm > * {
+    margin-top: 10px;
+}
+
+input {
+    height: 30px;
+    background-color: #06130d;
+    border: 2px solid #f8f0d3;
+    color: #f8f0d3;
+}
+
+#loginSubmit {
+    background-color: #CDA71E;
+    border: 1px solid #06130d;
+    color: #06130d;
+    height: 25px;
+    width: 50%;
+    margin: 40px auto;
+    font-family: 'Marcellus SC', serif;
+    cursor: pointer;
+}
+
+#loginSubmit:hover {
+    background-color: lightgray;
+}
+
+.signup {
+    margin: 0 auto;
+    width: 300px;
+    text-align: center;
+}
+
+.signupText {
+    margin: 0;
+}
+
+.signupLink {
+    color: #CDA71E;
+    text-decoration: none;
+}
+
+.signupLink:hover {
+    text-decoration: solid underline;
+}

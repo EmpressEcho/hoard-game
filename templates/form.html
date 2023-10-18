@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block headBlock %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+{% endblock %}
+
+{% block contentBlock %}
+<a href="{{ url_for('home') }}" class="backButton">< Back to Game</a>
+
+<div class="flashMessageBox">
+    {% for message in get_flashed_messages() %}
+    <p class="flashedMessage">{{ message }}</p>
+    {% endfor %}
+</div>
+
+<form action="" method="post" class="loginForm">
+    <label for="loginEmail">Email Address:</label>
+    <input type="email" name="email" id="loginEmail">
+    <label for="loginPassword">Password:</label>
+    <input type="password" name="password" id="loginPassword">
+    {% if headerTitle == "Sign up" %}
+    <label for="confirmPassword">Confirm Password:</label>
+    <input type="password" name="confirmPassword" id="confirmPassword">
+    {% endif %}
+    <button type="submit" id="loginSubmit">{{ headerTitle }}</button>
+</form>
+
+{% if headerTitle == "Log in" %}
+<div class="signup">
+    <p class="signupText">Not got an account?</p>
+    <a href="{{ url_for('signup') }}" class="signupLink">Sign up here!</a>
+</div>
+{% endif %}
+{% endblock %}
+
+{% block scriptsBlock %}
+<script src="{{ url_for('static', filename='js/base.js') }}"></script>
+{% endblock %}

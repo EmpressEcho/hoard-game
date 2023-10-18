@@ -1,0 +1,14 @@
+{% from "macros/repeatingGrid.html" import achievementsGrid %}
+{% extends 'base.html' %}
+
+{% block headBlock %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/achievements.css') }}">
+{% endblock %}
+
+{% block contentBlock %}
+<a href="{{ url_for('home') }}" class="backButton">< Back to Game</a>
+{{ achievementsGrid( achievementsList, unlockedAchievements, 20) }}
+{% endblock %}
+
+{% block scriptsBlock %}
+{% endblock %}

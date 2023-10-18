@@ -1,0 +1,15 @@
+{% macro alert(email) %}
+{% if not email %}
+<div class="alert">
+    <p class="alertTitle">Welcome to Hoard!</p>
+    <p class="alertBody">This is a little project I've been putting together as a portfolio project to demonstrate web design and Javascript skills. It uses HTML, CSS, and Javascript, all of which I have written from scratch, to create an idle browser game. If you've ever played Cookie Clicker, it's a bit like that, but with more of a fantasy twist, inspired by my love of D&D and fantasy in general. In this game you play as a young dragon, only just hatched, and starting out building your hoard, and in doing so, your power.</p>
+    <div class="alertClose">Close</div>
+</div>
+{% else %}
+<div class="alert hidden">
+    <p class="alertTitle"></p>
+    <p class="alertBody"></p>
+    <div class="alertClose">Close</div>
+</div>
+{% endif %}
+{% endmacro %}

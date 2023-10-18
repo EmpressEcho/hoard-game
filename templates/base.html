@@ -1,0 +1,39 @@
+{% from "macros/userProfile.html" import userProfileOptions %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    {% block headBlock %}
+    {% endblock %}
+    {% set bgTheme = theme or 'green' %}
+    <style>
+        .alert, .alertClose, .userProfileOptions {
+            background-color: var({{ '--bg-' ~ bgTheme }});
+        }
+    </style>
+</head>
+<body style="background-color: var({{ '--bg-' ~ bgTheme }});">
+    <div id="grid" style="background-color: var({{ '--fg-' ~ bgTheme }});">
+        <header class="header">{{ headerTitle }}
+            <div class="userProfile">
+                <img src="{{ userIcon or url_for('static', filename='images/hoard-icon-placeholder.png') }}" class="userProfilePicture"/>
+            </div>
+        </header>
+        <main>
+            {% block contentBlock %}
+            {% endblock %}
+            {{ userProfileOptions(session.get("email"), displayName) }}
+        </main>
+        
+        <footer class="footer">
+            <small>Copyright &copy;2022. Hoard. All rights reserved.</small>
+        </footer>
+        {% block scriptsBlock %}
+        {% endblock %}
+    </div>
+</body>
+</html>

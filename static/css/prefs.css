@@ -1,0 +1,112 @@
+main {
+    height: 626px;
+    display: grid;
+    grid-template-columns: 1200px 300px;
+    grid-template-areas: 
+        "main sidebar";
+}
+
+.userPrefs {
+    grid-area: main;
+}
+
+.displayPrefs {
+    grid-area: sidebar;
+}
+
+.backButton {
+    position: absolute;
+    display: block;
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    padding-top: 10px;
+    margin: 25px;
+    background-color: #CDA71E;
+    border: 1px solid #06130d;
+    color: #06130d;
+    text-decoration: none;
+}
+
+.profilePicture {
+    height: 275px;
+    width: 275px;
+    object-fit: cover;
+    margin: 13px;
+}
+
+.themeChoice, .pfpUpload {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 275px;
+    margin: 0 13px;
+}
+
+.themeChoice > *, .pfpUpload > * {
+    width: 200px;
+    margin: 5px auto;
+    overflow: hidden;
+}
+
+button {
+    background-color: #CDA71E;
+    border: 1px solid #06130d;
+    color: #06130d;
+    height: 25px;
+    font-family: 'Marcellus SC', serif;
+    cursor: pointer;
+}
+
+input {
+    height: 25px;
+    background-color: #06130d;
+    border: 1px solid #f8f0d3;
+    color: #f8f0d3;
+    font-family: 'Marcellus SC', serif;
+}
+
+#theme, option {
+    height: 25px;
+    background-color: #06130d;
+    border: 1px solid #f8f0d3;
+    color: #f8f0d3;
+    font-family: 'Marcellus SC', serif;
+}
+
+datalist {
+    border-radius: 0px;
+}
+
+#themeSubmit, #pfpSubmit {
+    width: 45%;
+}
+
+.displayName, .email, .password {
+    padding-bottom: 10px; margin: 10px;
+    border-bottom: 1px solid #f8f0d3;
+}
+
+.displayName {
+    margin-top: 90px;
+}
+
+#displayNameLabel, #emailLabel, #passwordLabel, #confirmPasswordLabel {
+    display: block;
+}
+
+#displayNameInput, #emailInput, #passwordInput, #confirmPasswordInput {
+    width: 75%;
+    margin: 10px;
+    height: 30px;
+}
+
+#displayNameSubmit, #emailSubmit, #passwordSubmit {
+    width: 20%;
+}
+
+h3 {
+    font-weight: normal;
+    margin: 10px;
+    text-align: center;
+}
