@@ -11,9 +11,6 @@ from flask import (
 )
 from passlib.hash import pbkdf2_sha256
 from pymongo import MongoClient
-from dotenv import load_dotenv
-
-load_dotenv()
 
 def create_app():
     app = Flask(__name__)
