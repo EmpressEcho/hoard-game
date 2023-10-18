@@ -1,0 +1,74 @@
+{% macro achievementsGrid(achievementList, unlockedList, total) %}
+{% for item in achievementList %}
+{% if item.id not in unlockedList %}
+<div class="achievement locked">
+{% else %}
+<div class="achievement">
+{% endif %}
+    <div class="achievementImage"></div>
+    <div class="achievementText">
+        {% if item.id not in unlockedList %}
+        <h4 class="achievementTitle">???</h4>
+        <p class="achievementDescription">??????</p>
+        {% else %}
+        <h4 class="achievementTitle">{{ item.title }}</h4>
+        <p class="achievementDescription">{{ item.description }}</p>
+        {% endif %}
+    </div>
+</div>
+{% endfor %}
+{% set listLength = achievementList | length %}
+{% for n in range(total-listLength) %}
+<div class="achievement hidden">
+</div>
+{% endfor %}
+{% endmacro %}
+
+{% macro questGrid(questList, unlockedList, total) %}
+{% for item in questList %}
+{% if item.id not in unlockedList %}
+<div class="quest hidden" id="{{ item.id }}">
+{% else %}
+<div class="quest" id="{{ item.id }}">
+{% endif %}
+    <p>{{ item.title | safe }}</p>
+    <img src="{{ url_for('static', filename=item.filename) }}" class="questImage" />
+    <div class="progContainer">
+        <div class="progBar" id="progBar{{ loop.index }}"></div>
+    </div>
+</div>
+{% endfor %}
+{% endmacro %}
+
+{% macro minionsGrid(minionsList, unlockedDict) %}
+{% for item in minionsList %}
+{% if unlockedDict[item.id] == 0 %}
+<div class="minion hidden" id="{{ item.id }}">
+{% else %}
+<div class="minion" id="{{ item.id }}">
+{% endif %}
+    <p>{{ item.name }}</p>
+    <p class="minionNum" id="minionNum{{ loop.index }}">{{ unlockedDict[item.id] }}</p>
+    <!-- <div class="progContainerM">
+        <div class="progBar" id="progBarM{{ loop.index }}"></div>
+    </div> -->
+</div>
+{% endfor %}
+{% endmacro %}
+
+{% macro storeMinionsGrid(storeMinionsList, total) %}
+{% for item in storeMinionsList %}
+<div class="storeMinionsItem" id="store{{ item.name }}">
+    <div>
+        <p class="storeMinionsHeader">{{ item.name }}</p>
+        <div class="storeMinionsImage"></div>
+    </div>
+    <p class="storeMinionsBio">{{ item.description | safe }}</p>
+</div>
+{% endfor %}
+{% set listLength = storeMinionsList | length %}
+{% for n in range(total-listLength) %}
+<div class="storeMinionsItem hidden">
+</div>
+{% endfor %}
+{% endmacro %}

@@ -135,57 +135,57 @@ const minionDragonborn = document.getElementById("minionDragonborn");
 const minionElementals = document.getElementById("minionElementals");
 
 // --- Minion Progress Bars ---
-const progBarKobolds = document.getElementById("progBarM1");
-const progBarBandits = document.getElementById("progBarM2");
-const progBarCultists = document.getElementById("progBarM3");
-const progBarDragonborn = document.getElementById("progBarM4");
-const progBarElementals = document.getElementById("progBarM5");
+const NumKoboldTracker = document.getElementById("minionNum1");
+const NumBanditTracker = document.getElementById("minionNum2");
+const NumCultistTracker = document.getElementById("minionNum3");
+const NumDragonbornTracker = document.getElementById("minionNum4");
+const NumElementalTracker = document.getElementById("minionNum5");
 
-// --- Store Elements ---
+// // --- Store Elements ---
 const storeButton = document.querySelector(".storeButton");
 const store = document.querySelector(".store");
 
 // --- Store Minions ---
-const storeKobolds = document.getElementById("storeKobolds");
-const storeKoboldTitle = document.querySelector("#storeKobolds .storeMinionsHeader .title");
-const storeKoboldPrice = document.querySelector("#storeKobolds .storeMinionsHeader .price");
-const storeKoboldBio = document.querySelector("#storeKobolds .storeMinionsBio");
+const storeKobolds = document.getElementById("storeKobold");
+const storeKoboldTitle = document.querySelector("#storeKobold .storeMinionsHeader .title");
+const storeKoboldPrice = document.querySelector("#storeKobold .storeMinionsHeader .price");
+const storeKoboldBio = document.querySelector("#storeKobold .storeMinionsBio");
 
-const storeBandits = document.getElementById("storeBandits");
-const storeBanditTitle = document.querySelector("#storeBandits .storeMinionsHeader .title");
-const storeBanditPrice = document.querySelector("#storeBandits .storeMinionsHeader .price");
-const storeBanditBio = document.querySelector("#storeBandits .storeMinionsBio");
+const storeBandits = document.getElementById("storeBandit");
+const storeBanditTitle = document.querySelector("#storeBandit .storeMinionsHeader .title");
+const storeBanditPrice = document.querySelector("#storeBandit .storeMinionsHeader .price");
+const storeBanditBio = document.querySelector("#storeBandit .storeMinionsBio");
 
-const storeCultists = document.getElementById("storeCultists");
-const storeCultistTitle = document.querySelector("#storeCultists .storeMinionsHeader .title");
-const storeCultistPrice = document.querySelector("#storeCultists .storeMinionsHeader .price");
-const storeCultistBio = document.querySelector("#storeCultists .storeMinionsBio");
+const storeCultists = document.getElementById("storeCultist");
+const storeCultistTitle = document.querySelector("#storeCultist .storeMinionsHeader .title");
+const storeCultistPrice = document.querySelector("#storeCultist .storeMinionsHeader .price");
+const storeCultistBio = document.querySelector("#storeCultist .storeMinionsBio");
 
 const storeDragonborn = document.getElementById("storeDragonborn");
 const storeDbornTitle = document.querySelector("#storeDragonborn .storeMinionsHeader .title");
 const storeDbornPrice = document.querySelector("#storeDragonborn .storeMinionsHeader .price");
 const storeDbornBio = document.querySelector("#storeDragonborn .storeMinionsBio");
 
-const storeElementals = document.getElementById("storeElementals");
-const storeElementalTitle = document.querySelector("#storeElementals .storeMinionsHeader .title");
-const storeElementalPrice = document.querySelector("#storeElementals .storeMinionsHeader .price");
-const storeElementalBio = document.querySelector("#storeElementals .storeMinionsBio");
+const storeElementals = document.getElementById("storeElemental");
+const storeElementalTitle = document.querySelector("#storeElemental .storeMinionsHeader .title");
+const storeElementalPrice = document.querySelector("#storeElemental .storeMinionsHeader .price");
+const storeElementalBio = document.querySelector("#storeElemental .storeMinionsBio");
 
 // --- Minion Intervals ---
-let koboldInterval = null;
-let banditInterval = null;
-let cultistInterval = null;
-let dragonbornInterval = null;
-let elementalInterval = null;
+let koboldInterval;
+let banditInterval;
+let cultistInterval;
+let dragonbornInterval;
+let elementalInterval;
 
 // --- Minion Variables ---
 let kobolds = {
     name: "Kobold",
-    number: 0,
+    number: Number(NumKoboldTracker.textContent),
     delay: 2000,
     value: 1,
     cost: 10,
-    progBar: progBarKobolds,
+    numTracker: NumKoboldTracker,
     storeElement: storeKobolds,
     storeTitle: storeKoboldTitle,
     storePrice: storeKoboldPrice,
@@ -196,11 +196,11 @@ let kobolds = {
 };
 let bandits = {
     name: "Bandit",
-    number: 0,
+    number: Number(NumBanditTracker.textContent),
     delay: 2000,
     value: 3,
     cost: 20,
-    progBar: progBarBandits,
+    numTracker: NumBanditTracker,
     storeElement: storeBandits,
     storeTitle: storeBanditTitle,
     storePrice: storeBanditPrice,
@@ -211,11 +211,11 @@ let bandits = {
 };
 let cultists = {
     name: "Cultist",
-    number: 0,
+    number: Number(NumCultistTracker.textContent),
     delay: 2000,
     value: 6,
     cost: 30,
-    progBar: progBarCultists,
+    numTracker: NumCultistTracker,
     storeElement: storeCultists,
     storeTitle: storeCultistTitle,
     storePrice: storeCultistPrice,
@@ -226,11 +226,11 @@ let cultists = {
 };
 let dragonborn = {
     name: "Dragonborn",
-    number: 0,
+    number: Number(NumDragonbornTracker.textContent),
     delay: 2000,
     value: 9,
     cost: 40,
-    progBar: progBarDragonborn,
+    numTracker: NumDragonbornTracker,
     storeElement: storeDragonborn,
     storeTitle: storeDbornTitle,
     storePrice: storeDbornPrice,
@@ -241,11 +241,11 @@ let dragonborn = {
 };
 let elementals = {
     name: "Elemental",
-    number: 0,
+    number: Number(NumElementalTracker.textContent),
     delay: 2000,
     value: 12,
     cost: 50,
-    progBar: progBarElementals,
+    numTracker: NumElementalTracker,
     storeElement: storeElementals,
     storeTitle: storeElementalTitle,
     storePrice: storeElementalPrice,
@@ -255,20 +255,6 @@ let elementals = {
     unlockDescription: "The power to create elementals has unlocked itself within you!"
 };
 let minionArray = [kobolds, bandits, cultists, dragonborn, elementals];
-
-// --- User Profile Elements ---
-const userProfileButton = document.querySelector(".userProfile");
-const userProfileOptions = document.querySelector(".userProfileOptions");
-const userLogin = document.getElementById("userLogin");
-const userPrefs = document.getElementById("userPrefs");
-const userAchievements = document.getElementById("userAchievements");
-const userLogout = document.getElementById("userLogout");
-
-// --- Alert Elements ---
-const alertElement = document.querySelector(".alert")
-const alertTitle = document.querySelector(".alertTitle")
-const alertBody = document.querySelector(".alertBody")
-const alertClose = document.querySelector(".alertClose")
 
 // --------------
 
@@ -291,15 +277,9 @@ function updateMinionInterval (minionInterval, minion) {
     minionInterval = setInterval(runMinion, minion.delay, minion);
 }
 
-function updateMinionElement (minionElement) {
-    if (minionElement.classList.contains("hidden")) (minionElement.classList.remove("hidden"));
-
-}
-
-function showAlert (title, body) {
-    alertTitle.textContent = title;
-    alertBody.textContent = body;
-    toggleHidden(alertElement)
+function updateMinionElement (minion) {
+    if (minion.element.classList.contains("hidden")) (minion.element.classList.remove("hidden"));
+    minion.numTracker.textContent = minion.number;
 }
 
 function updateMinionsInStore (gold) {
@@ -313,23 +293,6 @@ function updateMinionsInStore (gold) {
         }
     }
 }
-
-function runMinion(minion) {
-    let goldValue = minion.number * minion.value
-    minion.progBar.animate([
-        {
-            width: "0%"
-        },
-        {
-            width: "100%"
-        }
-    ], minion.delay);
-    setTimeout(() => updateGold(goldValue), minion.delay);
-}
-
-function toggleHidden (element) {
-    element.classList.toggle("hidden");
-};
 
 for (let i = 0; i < questArray.length; i++) {
     questArray[i].element.addEventListener("click", function() {
@@ -355,16 +318,7 @@ for (let i = 0; i < minionArray.length; i++) {
         if (Number(goldTracker.textContent) >= minionArray[i].cost) {
             updateGold(0-minionArray[i].cost);
             minionArray[i].number++
-            updateMinionElement(minionArray[i].element);
-            updateMinionInterval(minionArray[i].interval, minionArray[i]);
+            updateMinionElement(minionArray[i]);
         }
     })
 }
-
-userProfileButton.addEventListener("click", function() {
-    toggleHidden(userProfileOptions);
-})
-
-alertClose.addEventListener("click", function() {
-    toggleHidden(alertElement)
-})

@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block headBlock %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/prefs.css') }}">
+{% endblock %}
+
+{% block contentBlock %}
+<a href="{{ url_for('home') }}" class="backButton">< Back to Game</a>
+
+<div class="userPrefs">
+    <form action="" method="post" class="displayName">
+        <label id="displayNameLabel" for="displayNameInput">Display Name:</label>
+        <input type="text" id="displayNameInput" name="displayName">
+        <button type="submit" id="displayNameSubmit">Change Name</button>
+    </form>
+    <h3>Login Details</h3>
+    <form action="" method="post" class="email">
+        <label id="emailLabel" for="emailInput">Email Address:</label>
+        <input type="email" id="emailInput" name="email">
+        <button type="submit" id="emailSubmit">Change Email Address</button>
+    </form>
+    <form action="" method="post" class="password">
+        <label id="passwordLabel" for="passwordInput">Password:</label>
+        <input type="password" id="passwordInput" name="password">
+        <label id="confirmPasswordLabel" for="conrifmPasswordInput">Confirm Password:</label>
+        <input type="password" id="confirmPasswordInput" name="confirmPassword">
+        <button type="submit" id="passwordSubmit">Change Password</button>
+    </form>
+</div>
+<aside class="displayPrefs">
+    <img class="profilePicture" src="{{ userIcon or url_for('static', filename='images/hoard-icon-placeholder.png') }}" alt="User Profile Picture">
+
+    <form action="" method="post" class="pfpUpload">
+        <label for="pfp">Change Profile Picture:</label>
+        <input type="url" name="pfp" id="pfp" placeholder="https://example.com" pattern="https://.*" size="30" required />
+        <button type="submit" id="pfpSubmit">Upload</button>
+    </form>
+    
+    <form action="" method="post" class="themeChoice">
+        <label for="theme">Themes:</label>
+        <select id="theme" name="theme">
+            <option value="green">Poison Green</option>
+            <option value="purple">Psychic Purple</option>
+            <option value="red">Fire Red</option>
+            <option value="blue">Lightning Blue</option>
+        </select>
+        <button type="submit" id="themeSubmit">Change Theme</button>
+    </form>
+</aside>
+{% endblock %}
+
+{% block scriptsBlock %}
+{% endblock %}

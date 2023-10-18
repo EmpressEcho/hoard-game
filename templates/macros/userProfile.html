@@ -1,0 +1,12 @@
+{% macro userProfileOptions(email, displayName) %}
+<div class="userProfileOptions hidden">
+    {% if not email %}
+    <a href="{{ url_for('login') }}" id="userLogin">Log in</a>
+    {% else %}
+    <p>{{ displayName }}</p>
+    <a href="{{ url_for('preferences') }}" id="userPrefs">Preferences</a>
+    <a href="{{ url_for('achievements') }}" id="userAchievements">Achievements</a>
+    <a href="{{ url_for('logout') }}" id="userLogout">Log out</a>
+    {% endif %}
+</div>
+{% endmacro %}
