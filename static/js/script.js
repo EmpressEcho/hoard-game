@@ -13,16 +13,16 @@ const quest9Element = document.getElementById("quest9");
 const quest10Element = document.getElementById("quest10");
 
 // --- Quest Progress Bars ---
-const progBarQ1 = document.getElementById("progBar1");
-const progBarQ2 = document.getElementById("progBar2");
-const progBarQ3 = document.getElementById("progBar3");
-const progBarQ4 = document.getElementById("progBar4");
-const progBarQ5 = document.getElementById("progBar5");
-const progBarQ6 = document.getElementById("progBar6");
-const progBarQ7 = document.getElementById("progBar7");
-const progBarQ8 = document.getElementById("progBar8");
-const progBarQ9 = document.getElementById("progBar9");
-const progBarQ10 = document.getElementById("progBar10");
+const progBarQ1 = document.getElementById("progBar_quest1");
+const progBarQ2 = document.getElementById("progBar_quest2");
+const progBarQ3 = document.getElementById("progBar_quest3");
+const progBarQ4 = document.getElementById("progBar_quest4");
+const progBarQ5 = document.getElementById("progBar_quest5");
+const progBarQ6 = document.getElementById("progBar_quest6");
+const progBarQ7 = document.getElementById("progBar_quest7");
+const progBarQ8 = document.getElementById("progBar_quest8");
+const progBarQ9 = document.getElementById("progBar_quest9");
+const progBarQ10 = document.getElementById("progBar_quest10");
 
 // --- Quest Variables ---
 const quest1 = {
