@@ -34,7 +34,7 @@
     <p>{{ item.title | safe }}</p>
     <img src="{{ url_for('static', filename=item.filename) }}" class="questImage" />
     <div class="progContainer">
-        <div class="progBar" id="progBar{{ loop.index }}"></div>
+        <div class="progBar" id="progBarQ{{ loop.index }}"></div>
     </div>
 </div>
 {% endfor %}
