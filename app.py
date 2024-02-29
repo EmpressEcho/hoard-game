@@ -12,6 +12,17 @@ from flask import (
 from passlib.hash import pbkdf2_sha256
 from pymongo import MongoClient
 
+def create_list(raw_data, expected_sort):
+    # pass
+    result = []
+
+    for x in expected_sort:
+      for y in raw_data:
+          if y.id == x:
+              result.append(y)
+
+    return result
+
 def create_app():
     app = Flask(__name__)
     client = MongoClient(os.getenv("MONGODB_URI"))
@@ -22,12 +33,16 @@ def create_app():
     def home():
         quests = app.db.quests.find({})
         minions = app.db.minions.find({})
-        store_minions = app.db.store_minions.find({})#
+        store_minions = app.db.store_minions.find({})
+
+        sorted_quests = ["quest1", "quest2", "quest3", "quest4", "quest5", "quest6", "quest7", "quest8", "quest9", "quest10"]
+        sorted_minions = ["minionKobolds", "minionBandits", "minionCultists", "minionDragonborn", "minionElementals"]
+        sorted_store_minions = ["storeKobold", "storeBandit", "storeCultist", "storeDragonborn", "storeElemental"]
 
         kwargs = {
-            "quests": list(quests),
-            "minions": list(minions),
-            "store_minions": list(store_minions),
+            "quests": create_list(quests, sorted_quests),
+            "minions": create_list(minions, sorted_minions),
+            "store_minions": create_list(store_minions, sorted_store_minions),
         }
 
         if session.get("email"):
