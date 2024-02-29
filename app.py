@@ -30,9 +30,9 @@ def create_app():
         sorted_store_minions = ["storeKobold", "storeBandit", "storeCultist", "storeDragonborn", "storeElemental"]
 
         kwargs = {
-            "quests": create_list(quests, sorted_quests),
-            "minions": create_list(minions, sorted_minions),
-            "store_minions": create_list(store_minions, sorted_store_minions),
+            "quests": create_list(list(quests), sorted_quests),
+            "minions": create_list(list(minions), sorted_minions),
+            "store_minions": create_list(list(store_minions), sorted_store_minions),
         }
 
         if session.get("email"):
