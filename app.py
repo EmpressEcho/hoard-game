@@ -11,17 +11,7 @@ from flask import (
 )
 from passlib.hash import pbkdf2_sha256
 from pymongo import MongoClient
-
-def create_list(raw_data, expected_sort):
-    # pass
-    result = []
-
-    for x in expected_sort:
-      for y in raw_data:
-          if y.id == x:
-              result.append(y)
-
-    return result
+from tools import create_list
 
 def create_app():
     app = Flask(__name__)
