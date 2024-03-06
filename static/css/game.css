@@ -195,6 +195,10 @@ main {
     font-size: 1.25rem;
 }
 
+.storeMinionsHeader {
+    margin: 0
+}
+
 .storeMinionsHeader p {
     margin: 0
 }
