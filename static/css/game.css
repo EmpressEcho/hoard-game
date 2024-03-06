@@ -188,14 +188,28 @@ main {
     height: 50px;
 }
 
-.storeMinionsHeader {
+.storeMinionsDetails {
     margin: 5px 0 0 5px;
     width: 50%;
     float: left;
     font-size: 1.25rem;
 }
 
+.storeMinionsHeader {
+    margin: 0
+}
+
 .storeMinionsHeader p {
+    margin: 0
+}
+
+.storeMinionsCost {
+    margin: 0 0 0 5px;
+    font-size: 1rem;
+    color: #CDA71E;
+}
+
+.storeMinionsCost p {
     margin: 0
 }
 

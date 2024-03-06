@@ -60,7 +60,10 @@
 {% for item in storeMinionsList %}
 <div class="storeMinionsItem" id="store{{ item.name }}">
     <div>
-        <p class="storeMinionsHeader">{{ item.name }}</p>
+        <div class="storeMinionsDetails">
+            <p class="storeMinionsHeader">{{ item.name }}</p>
+            <p class="storeMinionsCost">{{ item.cost }}G</p>
+        </div>
         <div class="storeMinionsImage"></div>
     </div>
     <p class="storeMinionsBio">{{ item.description | safe }}</p>
