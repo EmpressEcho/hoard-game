@@ -5,6 +5,12 @@
 :root {
     --bg-green: #06130d;
     --fg-green: #0d261a;
+    --bg-red: #1a0000;
+    --fg-red: #330000;
+    --bg-purple: #1a001a;
+    --fg-purple: #330033;
+    --bg-blue: #00001a;
+    --fg-blue: #000033;
 }
 
 body {
