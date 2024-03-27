@@ -143,7 +143,6 @@ main {
     position: absolute;
     height: 626px;
     width: 1198px;
-    background-color: #0d261a;
     top: 0px;
     display: grid;
     grid-template-columns: 800px 400px;
@@ -211,6 +210,26 @@ main {
 
 .storeMinionsCost p {
     margin: 0
+}
+
+#storeKoboldImage {
+    background-image: url(/static/images/kobold-icon.png);
+}
+
+#storeBanditImage {
+    background-image: url(/static/images/bandit-icon.png);
+}
+
+#storeCultistImage {
+    background-image: url(/static/images/cultist-icon.png);
+}
+
+#storeDragonbornImage {
+    background-image: url(/static/images/dragonborn-icon.png);
+}
+
+#storeElementalImage {
+    background-image: url(/static/images/elemental-icon.png);
 }
 
 .price {
